@@ -1,0 +1,388 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.nav ul li {
+    padding: 5px;
+    text-align: center;
+    scroll-behavior: auto;
+}
+
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+#search-input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+#search-form button {
+    padding: 5px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background: #fff;
+    cursor: pointer;
+}
+
+#search-form button i {
+    color: #4CAF50;
+}
+
+#suggestions {
+    position: absolute;
+    top: 40px;
+    width: 30%;
+    background: rgb(255, 255, 255);
+    border: none;
+    z-index: 1001;
+    color: black;
+}
+
+#suggestions div {
+    padding: 5px;
+    cursor: pointer;
+    text-align: left;
+    box-sizing: border-box;
+    text-indent: 5px;
+    padding-top: 5px;
+}
+
+#suggestions div:hover {
+    background: #f1f1f1;
+}
+
+.container {
+    text-align: center;
+    margin-top: 90px;
+    /* Adjust margin-top to account for the fixed header */
+}
+
+.weather-tile {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.weather-icon {
+    font-size: 70px;
+}
+
+
+#time {
+    color: black;
+    position: absolute;
+    top: 1%;
+    left: 50px;
+    font-size: 50px;
+}
+
+
+.weather-info h2 {
+    margin: 0;
+}
+
+#forecast {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.forecast-tile {
+    background-color: #adadad;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 170px;
+    bottom: 10px;
+}
+
+.forecast-tile i{
+    font-size: 32px;
+}
+
+footer {
+    background: #4CAF50;
+    color: hsl(0, 7%, 8%);
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    font-family: calc();
+}
+footer img{
+    height: 35px;
+    width: 35px;
+}
+footer ul{
+display: flex;
+list-style: none;
+justify-content: center;
+}
+
+.turbine-container {
+    margin-top: 20px;
+}
+
+.turbine {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    animation: spin 2s linear infinite;
+    top: -100px;
+    left: -400px;
+}
+
+.blade {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #4CAF50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom center;
+}
+
+
+.blade1 {
+    transform: rotate(0deg);
+}
+
+.blade2 {
+    transform: rotate(120deg);
+}
+
+.blade1 {
+    transform: rotate(0deg);
+}
+
+.blade2 {
+    transform: rotate(120deg);
+}
+
+.blade3 {
+    transform: rotate(240deg);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.blade3 {
+    transform: rotate(240deg);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.turbine-container {
+    margin-top: 20px;
+}
+
+.turbine {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    animation: spin 2s linear infinite;
+}
+
+.cup {
+    width: 10px;
+    height: 10px;
+    background: #4CAF50;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+}
+
+.cup1 {
+    transform: translate(20px, 0);
+}
+
+.cup2 {
+    transform: translate(-20px, 0);
+}
+
+
+ .calender-container {
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    background-color:  grey;
+    color: #f7f7f7;
+    height: 270px;
+}
+
+
+#calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2px;
+    font-family: Arial, sans-serif;
+    height: 260px;
+}
+
+#calendar table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    
+}
+
+#calendar th,
+#calendar td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#calendar th {
+    background-color:green;
+    color: rgb(168, 12, 12);
+}
+
+#calendar .today {
+    background-color: wheat;
+    color: #000;
+}
+#calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#calendar table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+#calendar th, #calendar td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#calendar th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#calendar .today {
+    background-color: #a71f33;
+    color: #000;
+}
+
+
+
+
+
+
+/* Existing styles */
+
+/* Styles for the hourly forecast */
+#weather-forecast {
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    background-color: #777;
+    margin: 0;
+    padding: 10px 5px;
+}
+
+.forecast-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tile {
+    background-color: #292525;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 120px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tile p {
+    margin: 10px 0;
+}
+
+.tile p:first-child {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.tile p:last-child {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+
+
+
+'9abaf7561f03a5566cbe8c13ec1c22ef';

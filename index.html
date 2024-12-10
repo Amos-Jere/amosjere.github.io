@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h2 id="time">
+            </2>
+            <h1>Weather App</h1>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search for a city, country, or state"
+                    oninput="showSuggestions(this.value)">
+                <div id="suggestions"></div>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+    </header>
+    <div class="container">
+
+
+        <div class="weather-tile" id="current-weather">
+            <div class="weather-icon"><i id="weather-icon" class="fas"></i></div>
+            <div class="weather-info">
+                <h2 id="location">Loading.....</h2>
+                <p id="description"></p>
+                <p id="temperature"></p>
+                <p id="humidity"></p>
+                <p id="wind-speed"></p>
+                <p id="current-time"></p> <!-- Time display -->
+
+                <div class="turbine">
+                    <div class="blade blade1"></div>
+                    <div class="blade blade2"></div>
+                    <div class="blade blade3"></div>
+                </div>
+            </div>
+            <div class="calender-container">
+                <div id="calendar"></div>
+            </div>
+
+        </div>
+    </div>
+    <div id="forecast"></div>
+    <div class="container">
+        <div id="weather-forecast"></div>
+        <div id="weather-forecast"></div>
+    </div>
+    </div>
+    <footer>
+        <ul>
+        <li><img src="img/icu img.jpg"><a href="https://www.icuzambia.net ">ICU zambia</a></li>
+        <li><img src="img/logo.jpg"><a href="https://www.zrdc.org ">Zrdc</a></li>
+        </ul><br>
+        <td align="middle"><span class="copyright">Masala Ward.All rights reserved.Designed and maintained By Jere
+                Amos,Sin:2305671974</span></td>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+<script>
+    function displayCalendar() {
+        const calendarElement = document.getElementById('calendar');
+        const now = new Date();
+
+        const month = now.getMonth();
+        const year = now.getFullYear();
+
+        const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        let calendarHtml = `<h2>${monthNames[month]} ${year}</h2>`;
+        calendarHtml += '<table><tr>';
+
+        daysOfWeek.forEach(day => {
+            calendarHtml += `<th>${day}</th>`;
+        });
+
+        calendarHtml += '</tr><tr>';
+
+        for (let i = 0; i < firstDay; i++) {
+            calendarHtml += '<td></td>';
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            if ((day + firstDay - 1) % 7 === 0 && day !== 1) {
+                calendarHtml += '</tr><tr>';
+            }
+
+            if (day === now.getDate()) {
+                calendarHtml += `<td class="today">${day}</td>`;
+            } else {
+                calendarHtml += `<td>${day}</td>`;
+            }
+        }
+
+        calendarHtml += '</tr></table>';
+        calendarElement.innerHTML = calendarHtml;
+    }
+
+    displayCalendar();
+</script>
+</body>
+
+</html>
